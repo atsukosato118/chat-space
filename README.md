@@ -29,8 +29,8 @@ Things you may want to cover:
 |------|----|-------|
 |body|text|null: false|
 |image|string|null: false|
-|group_id|integer||
-|user_id|integer||
+|group_id|integer|foreign_key: true|
+|user_id|integer|foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -63,7 +63,10 @@ Things you may want to cover:
 
 
 ## group_usersテーブル
-  t.references  :user,  index: true, foreign_key: true   t.references  :group, index: true, foreign_key: true
+|Column|Type|Options|
+|------|----|-------|
+|references|user|index: true, foreign_key: true|
+|references|group|index: true, foreign_key: true|
 
 ### Association
 - belongs_to :group
