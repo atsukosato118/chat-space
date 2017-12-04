@@ -1,4 +1,4 @@
-class MessagesControllerController < ApplicationController
+class MessagesController < ApplicationController
    # インデックスアクションの追加
    # コントローラークラスのインスタンスメソッドはアクションと呼ばれる
    def index
