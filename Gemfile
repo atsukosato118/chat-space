@@ -58,3 +58,5 @@ group :development do
   # Convert .erb -> .haml
 gem 'erb2haml'
 end
+# アイコンを表示
+gem "font-awesome-rails"
