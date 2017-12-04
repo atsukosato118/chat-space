@@ -1,0 +1,19 @@
+// index(チャットスペース)のscss
+.chat {
+	color: red;
+	.header{
+		font-size: 50px;
+		&__left{
+			background-color: blue;
+			&__groupname{
+			}
+			&__member{
+			}
+		}
+		&__right{
+		}
+	}
+	.chat-main{
+	}
+}
+
