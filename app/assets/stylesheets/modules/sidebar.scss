@@ -1,1 +1,23 @@
 // サイドバー（部分テンプレート）のscss
+
+.sidebar {
+	background-color: #DDFFFF;
+	width: 100px;
+	width: 300px;
+	// float: left;
+	.header {
+		&__left {
+			&__username {
+			}
+			&__icon {
+			}
+		}
+	}
+	.main {
+	}
+}
+
+
+
+
+

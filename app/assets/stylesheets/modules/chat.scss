@@ -1,6 +1,8 @@
 // index(チャットスペース)のscss
 .chat {
-	color: red;
+	background-color: #FFEEFF;
+	width: calc(100% - 300px);
+	// float: right;
 	.header{
 		font-size: 50px;
 		&__left{
@@ -16,4 +18,5 @@
 	.chat-main{
 	}
 }
+
 
