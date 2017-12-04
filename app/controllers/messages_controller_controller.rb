@@ -1,4 +1,5 @@
 class MessagesControllerController < ApplicationController
-    def index
+   # インデックスアクションの追加
+   def index
     end
 end
