@@ -2,15 +2,26 @@
 .container
 	= render "shared/sidebar"
 	.chat
-		.header
-			kakikukeko
-			.header__left
-				aaaa
-				.groupname
-				.member
-			.heder__right
-		.main
-			.main__contents
+		.chat-header
+			.chat-header__left
+				.chat-header__left__group
+					%p Header GroupName
+				.chat-header__left__member
+					%p Header Member
+			.chat-header__right
+		.chat-main
+			.chat-main__content
+				.chat-main__content__groupname
+					%p Main GroupName
+				.chat-main__content__message
+					%p Main Message
+		.chat-comment
+			.chat-comment__left
+				.chat-comment__left__text
+				.chat-comment__left__img
+			.chat-comment__right
 
 / 部分テンプレート（サイドバー）の導入
-/ = render "shared/sidebar" 
+/ = render "shared/sidebar"
+/ .chat-header__right Editボタン
+

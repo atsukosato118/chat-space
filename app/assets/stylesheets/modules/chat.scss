@@ -1,7 +1,77 @@
 // index(チャットスペース)のscss
 .chat {
-	background-color: #FFEEFF;
+	.chat-header {
+		&__left {
+			&__group {
+				p {
+				}
+			&__member {
+				p {
+				}
+			}
+			}
+		}
+		&__right {
+		}
+	}
+	.chat-main {
+		&__content {
+			&__group {
+				p {
+				}
+			}
+			&__message {
+				p {
+
+				}
+			}
+		}
+	}
+	.chat-comment {
+		&__left {
+			&__text {
+			}
+			&__image {
+			}
+		}
+		&__right {
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.chat {
+	height: 100%;
 	width: calc(100% - 300px);
+	background-color: #FFEEFF;
 	padding: 0 40px;
 	.header{
 		&__left{
