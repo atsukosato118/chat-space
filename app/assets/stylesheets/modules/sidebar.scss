@@ -4,12 +4,25 @@
 	background-color: #DDFFFF;
 	height: 100%;
 	width: 300px;
-	// float: left;
 	.header {
-		&__left {
-			&__username {
+		height: 101px;
+		width: 300px;
+	  background-color: #253141;
+	  display: flex;
+		&__name {
+			width: 150px;//仮置きの値
+			height: 101px;
+			background-color: #FFFFCC;
+			margin-left: 20px;
+		&__icon {
+			width: 15px;//仮置きの値
+			height: 101px;
+			background-color: #D9E5FF;
+			padding: 0 20 0 0px;
 			}
-			&__icon {
+			&group {
+			}
+			&acount {
 			}
 		}
 	}

@@ -2,9 +2,8 @@
 .chat {
 	background-color: #FFEEFF;
 	width: calc(100% - 300px);
-	// float: right;
+	padding: 0 40px;
 	.header{
-		font-size: 50px;
 		&__left{
 			background-color: blue;
 			&__groupname{
