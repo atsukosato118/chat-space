@@ -8,3 +8,7 @@
 @import "modules/sidebar";
 // container.scssの読み込み
 @import "container/container";
+// 画面いっぱい
+body {
+  height: 100vh;
+}
