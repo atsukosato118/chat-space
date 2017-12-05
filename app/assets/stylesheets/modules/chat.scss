@@ -4,57 +4,30 @@
 	height: 100%;
 	width: calc(100% - 300px);
 	.chat-header {
-		height: 101px;
-		width: 100%;
+		width: calc(100% - 40px);
+		height: 75px;
 	  background-color: #FFCCFF;
-	  display: flex;
-		&__left {
-			width: 500px;//仮置きの値
-			height: 101px;
-			background-color: #4689FF; //色を変更
-			margin-left: 40px;
-			&__group {
-				p {
-				background-color: #FFFFFF;
-				font-size: 16px;
-				font-weight: bold;
-				color: #333333;
-				margin: 30px 0 15px 0;
-				}
-			&__member {
-				p {
-				}
-			}
-			}
+	  padding: 35px 20px 0 20px;
+		p {
+			background-color: #FFFFFF;
+			font-size: 16px;
+			font-weight: bold;
+			color: #333333;
 		}
-		&__right {
+		p {
 		}
 	}
 	.chat-main {
-		clear: both;
-		&__content {
-			&__group {
 				p {
 				}
-			}
-			&__message {
 				p {
-
 				}
-			}
-		}
 	}
 	.chat-comment {
-		&__left {
-			&__text {
-			}
-			&__image {
-			}
-		}
-		&__right {
-		}
 	}
 }
+
+
 
 
 

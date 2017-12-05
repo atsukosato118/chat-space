@@ -5,15 +5,15 @@
 	height: 100%;
 	width: 300px;
 	.side-header {
-		height: 101px;
+		height: 100px; //メインを見て調節
 		width: 260px;
 	  background-color: #253141;
-	  margin: 0 20px;
+	  padding: 0 20px;
 			p {
 				font-size: 16px;
 				font-weight: bold;
 				color: #FFFFFF;
-				line-height: 101px;
+				line-height: 100px;
 				display: inline-block;
 			}
 			.fa.fa-pencil-square-o.fa-lg {
@@ -31,28 +31,21 @@
 	}
 	.side-main {
 		background-color: #FFFFDD;
-		height: 100%;
+		height: calc(100% - 100px);
 		width: 300px;
 		&__content {
-			height: 71px; //高さあとで調整
-			width: 300px;
-			background-color: #FFDBC9;
-			&__groupname {
-				background-color: #CCFFCC;
-		    width: 260px;
-		    padding: 20px 20px 5px 20px;
-			}
-				p {
-					background-color: #4689FF;
-					font-size: 15px;
-				  color: #FFFFFF;
-				  }
-			&__message {
-				background-color: #C2EEFF;
-		    width: 260px;
-		    padding: 0px 20px 20px 20px;
+			height: 65px; //高さあとで調整
+			width: 260px;
+			padding: 20px;
+			background-color: #2f3e51;
+			.side-name {
+				font-size: 15px;
+				color: #FFFFFF;
+				}
+			.side-message {
+				font-size: 11px;
+				color: #FFFFFF;
+				margin-top: 5px;
 			}
 		}
 	}
-
-// mainの中で、&__contentを繰り返す
