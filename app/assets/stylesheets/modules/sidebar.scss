@@ -4,12 +4,12 @@
 	background-color: #DDFFFF;
 	height: 100%;
 	width: 300px;
-	.header {
+	.side-header {
 		height: 101px;
 		width: 300px;
 	  background-color: #253141;
 	  display: flex;
-		&__name { 
+		&__name {
 			width: 150px;//仮置きの値
 			height: 101px;
 			background-color: #4689FF; //色を変更
@@ -26,19 +26,39 @@
 			background-color: #D9E5FF;//色を変更
 			padding: 0 20 0 0px;
 			margin-right: 20px;
-			&group {
+			&__group {
 				// アイコン入れる
 			}
-			&acount {
+			&__acount {
 				// アイコン入れる
 			}
 		}
 		}
 	}
-	.main {
+	.side-main {
+		background-color: #FFFFDD;
+		height: 100%;
+		width: 300px;
+		&__content {
+			height: 71px; //高さあとで調整
+			width: 300px;
+			background-color: #FFDBC9;
+			&__groupname {
+				background-color: #CCFFCC;
+		    width: 260px;
+		    padding: 20px 20px 5px 20px;
+			}
+				p {
+					background-color: #4689FF;
+					font-size: 15px;
+				  color: #FFFFFF;
+				  }
+			&__message {
+				background-color: #C2EEFF;
+		    width: 260px;
+		    padding: 0px 20px 20px 20px;
+			}
+		}
 	}
 
-
-
-
-
+// mainの中で、&__contentを繰り返す
