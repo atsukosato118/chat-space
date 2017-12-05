@@ -9,26 +9,34 @@
 		width: 300px;
 	  background-color: #253141;
 	  display: flex;
-		&__name {
+		&__name { 
 			width: 150px;//仮置きの値
 			height: 101px;
-			background-color: #FFFFCC;
+			background-color: #4689FF; //色を変更
 			margin-left: 20px;
-		&__icon {
-			width: 15px;//仮置きの値
-			height: 101px;
-			background-color: #D9E5FF;
-			padding: 0 20 0 0px;
+		}
+			p {
+				font-size: 16px;
+				font-weight: bold;
+				color: #FFFFFF;
 			}
+		&__icon {
+			width: 150px;//仮置きの値
+			height: 101px;
+			background-color: #D9E5FF;//色を変更
+			padding: 0 20 0 0px;
+			margin-right: 20px;
 			&group {
+				// アイコン入れる
 			}
 			&acount {
+				// アイコン入れる
 			}
+		}
 		}
 	}
 	.main {
 	}
-}
 
 
 
