@@ -2,9 +2,11 @@
 .chat {
 	height: 100%;
 	width: calc(100% - 300px);
+	// ヘッダー
 	.chat__header {
 		height: 65px;
 	  padding: 35px 40px 0 40px;
+	  border-bottom: thin solid #999999;
 		.chat__header__group {
 			font-size: 20px;
 			color: #333333;
@@ -16,19 +18,57 @@
 			margin-top: 15px;
 		}
 	}
+	// メイン
 	.chat__main {
+		height: calc(100% - 190px);
+		background-color: #f8f8f8;
+		.chat__main__first-content {
+			padding: 46px 40px 20px 40px;
+			border: thin solid #e8e8e8;
+					// 区切り目印のため
+			.chat__main__first-content__group {
+				font-size: 16px;
+				font-weight: bold;
+				color: #434A54;
+			}
+			.chat__main__first-content__message {
+				font-size: 14px;
+				color: #434A54;
+				margin-top: 10px;
+			}
+		}
 		.chat__main__content {
-	background-color: #D7EEFF;
+			padding: 20px 40px;
+			border: thin solid #e8e8e8;
+					// 区切り目印のため
 			.chat__main__content__group {
+				font-size: 16px;
+				font-weight: bold;
+				color: #434A54;
 			}
 			.chat__main__content__message {
+				font-size: 14px;
+				color: #434A54;
+				margin-top: 10px;
 			}
 		}
 	}
-	.chat__comment {
-	}
+	// コメント
+ 	.chat__comment {
+ 	}
 }
 
+      <div class="more">
+        <span><%= image_tag 'arrow_top.png' %></span>
+      <ul class="more_list">
+        <li>
+          <%= link_to '編集', "/tweets/#{@tweet.id}/edit", method: :get %>
+        </li>
+        <li>
+          <%= link_to '削除', "/tweets/#{@tweet.id}", method: :delete %>
+        </li>
+      </ul>
+    </div>
 
 
 

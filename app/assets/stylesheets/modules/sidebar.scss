@@ -1,11 +1,11 @@
 // サイドバー（部分テンプレート）のscss
 
 .side {
-	background-color: #DDFFFF;
 	height: 100%;
 	width: 300px;
+	background-color: #2f3e51;
 	&__header {
-		height: 100px; //メインを見て調節
+		height: 100px;
 		width: 260px;
 	  background-color: #253141;
 	  padding: 0 20px;
@@ -30,18 +30,19 @@
 		}
 	}
 	.side__main {
-		background-color: #FFFFDD;
 		height: calc(100% - 100px);
 		width: 300px;
 		.side__main__content {
 			width: 260px;
 			padding: 20px;
 			background-color: #2f3e51;
-			p.side__main__name {
+					// 区切り目印のため
+			border: thin solid #999999;
+			.side__main__name {
 				font-size: 15px;
 				color: #FFFFFF;
 				}
-			p.side__main__message {
+			.side__main__message {
 				font-size: 11px;
 				color: #FFFFFF;
 				margin-top: 5px;
