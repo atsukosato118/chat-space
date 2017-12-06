@@ -2,8 +2,10 @@
 .side
 	.side__header
 		%p Atusko Sato
-		%i.fa.fa-cog.fa-lg
-		%i.fa.fa-pencil-square-o.fa-lg
+		= link_to root_path do
+			%i.fa.fa-cog.fa-lg
+		= link_to root_path do
+			%i.fa.fa-pencil-square-o.fa-lg
 	.side__main
 		.side__main__content
 			%p.side__main__name GroupName1
@@ -12,9 +14,4 @@
 			%p.side__main__name GroupName2
 			%p.side__main__message The Latest Message2
 
-/ リングを設定する事
 
-
-
-/ リンク先
-/ link_to "EDIT".root_path
