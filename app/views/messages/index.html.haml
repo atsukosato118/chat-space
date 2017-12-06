@@ -19,6 +19,7 @@
 					%p.chat__main__first-content__list__time Time
 				%p.chat__main__first-content__message Main Message2
 		.chat__comment
-			%input{:type => "text"}
-				%i.fa.fa-picture-o
-			%input{:type => "submit", :value => "send"}
+			%input.text{:type => "text"}
+				.chat__comment__icon-box
+					%i.fa.fa-picture-o.fa-lg
+			%input.send{:type => "submit", :value => "send"}

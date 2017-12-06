@@ -71,5 +71,27 @@
   	bottom: 0;
   	background-color: #DDDDDD;
   	padding: 0 40px;
+  	display: flex;
+  	.text {
+  		height: 50px;
+  		width: calc(100% - 50px);
+  		margin: 20px 0px 20px 25px;
+  		border:none;
+  	}
+  		.chat__comment__icon-box {
+  			height: 49.5px;
+  			width: 30px;
+  			background-color: #FFFFFF;
+  			margin: 20px 0;
+  			line-height: 54px;
+  		}
+  	.send {
+  		height: 50px;
+  		width: 100px;
+  		background-color: #38AEF0;
+  		color: #FFFFFF;
+  		margin: 20px 0 20px 35px;
+  	}
  	}
- }
+}
+
