@@ -1,10 +1,10 @@
 // サイドバー（部分テンプレート）のscss
 
-.sidebar {
+.side {
 	background-color: #DDFFFF;
 	height: 100%;
 	width: 300px;
-	.side-header {
+	&__header {
 		height: 100px; //メインを見て調節
 		width: 260px;
 	  background-color: #253141;
@@ -19,30 +19,29 @@
 			.fa.fa-pencil-square-o.fa-lg {
 				color: #FFFFFF;
 				float: right;
-				line-height: 101px;
+				line-height: 100px;
 				margin: 0 10px 0 0;
 			}
 			.fa.fa-cog.fa-lg {
 				color: #FFFFFF;
 				float: right;
-				line-height: 101px;
+				line-height: 100px;
 			}
 		}
 	}
-	.side-main {
+	.side__main {
 		background-color: #FFFFDD;
 		height: calc(100% - 100px);
 		width: 300px;
-		&__content {
-			height: 65px; //高さあとで調整
+		.side__main__content {
 			width: 260px;
 			padding: 20px;
 			background-color: #2f3e51;
-			.side-name {
+			p.side__main__name {
 				font-size: 15px;
 				color: #FFFFFF;
 				}
-			.side-message {
+			p.side__main__message {
 				font-size: 11px;
 				color: #FFFFFF;
 				margin-top: 5px;

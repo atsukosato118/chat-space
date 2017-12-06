@@ -2,14 +2,14 @@
 .container
 	= render "shared/sidebar"
 	.chat
-		.chat-header
-			%p Header GroupName
-			%p Header Member
-		.chat-main
-			.chat-main__content
-				%p.main-group Main GroupName
-				%p.main-message Main Message
-		.chat-comment
+		.chat__header
+			%p.chat__header__group Header GroupName
+			%p.chat__header__member Header Member
+		.chat__main
+			.chat__main__content
+				%p.chat__main__content__group Main GroupName
+				%p.chat__main__content__message Main Message
+		.chat__comment
 / 部分テンプレート（サイドバー）の導入
 / = render "shared/sidebar"
 / .chat-header__right Editボタン

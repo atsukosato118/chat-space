@@ -1,32 +1,33 @@
 // index(チャットスペース)のscss
 .chat {
-	background-color: #FFEEFF;
 	height: 100%;
 	width: calc(100% - 300px);
-	.chat-header {
-		width: calc(100% - 40px);
-		height: 75px;
-	  background-color: #FFCCFF;
-	  padding: 35px 20px 0 20px;
-		p {
-			background-color: #FFFFFF;
-			font-size: 16px;
-			font-weight: bold;
+	.chat__header {
+		height: 65px;
+	  padding: 35px 40px 0 40px;
+		.chat__header__group {
+			font-size: 20px;
 			color: #333333;
 		}
-		p {
+		.chat__header__member{
+			background-color: #FFFFFF;
+			font-size: 12px;
+			color: #999999;
+			margin-top: 15px;
 		}
 	}
-	.chat-main {
-				p {
-				}
-				p {
-				}
+	.chat__main {
+		.chat__main__content {
+	background-color: #D7EEFF;
+			.chat__main__content__group {
+			}
+			.chat__main__content__message {
+			}
+		}
 	}
-	.chat-comment {
+	.chat__comment {
 	}
 }
-
 
 
 
