@@ -1,4 +1,5 @@
 // サイドバー（部分テンプレート）のscss
+$white: #FFFFFF;
 
 .side {
 	height: 100%;
@@ -12,18 +13,18 @@
 			p {
 				font-size: 16px;
 				font-weight: bold;
-				color: #FFFFFF;
+				color: $white;
 				line-height: 100px;
 				display: inline-block;
 			}
 			.fa.fa-pencil-square-o.fa-lg {
-				color: #FFFFFF;
+				color: $white;
 				float: right;
 				line-height: 100px;
 				margin: 0 10px 0 0;
 			}
 			.fa.fa-cog.fa-lg {
-				color: #FFFFFF;
+				color: $white;
 				float: right;
 				line-height: 100px;
 			}
@@ -32,17 +33,17 @@
 	.side__main {
 		height: calc(100% - 100px);
 		width: 300px;
-		.side__main__content {
+		&__content {
 			width: 260px;
 			padding: 20px;
 			background-color: #2f3e51;
-			.side__main__name {
+			&__name {
 				font-size: 15px;
-				color: #FFFFFF;
+				color: $white;
 				}
-			.side__main__message {
+			&__message {
 				font-size: 11px;
-				color: #FFFFFF;
+				color: $white;
 				margin-top: 5px;
 			}
 		}
