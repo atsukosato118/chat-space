@@ -7,14 +7,18 @@
 			%p.chat__header__member Header Member
 			.chat__header__edit-btn Edit
 		.chat__main
+			.chat__box
 			.chat__main__first-content
-				%p.chat__main__first-content__group Main GroupName1
+				.chat__main__first-content__list
+					%p.chat__main__first-content__list__group Main GroupName1
+					%p.chat__main__first-content__list__time Time
 				%p.chat__main__first-content__message Main Message1
-			.chat__main__content
-				%p.chat__main__content__group Main GroupName
-				%p.chat__main__content__message Main Message
+			.chat__main__first-content
+				.chat__main__first-content__list
+					%p.chat__main__first-content__list__group Main GroupName2
+					%p.chat__main__first-content__list__time Time
+				%p.chat__main__first-content__message Main Message2
 		.chat__comment
-/ 部分テンプレート（サイドバー）の導入
-/ = render "shared/sidebar"
-/ .chat-header__right Editボタン
-
+			%input{:type => "text"}
+				%i.fa.fa-picture-o
+			%input{:type => "submit", :value => "send"}

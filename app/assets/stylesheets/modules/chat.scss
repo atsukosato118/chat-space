@@ -21,9 +21,8 @@
 			height: 40px;
 			width: auto;
 			font-size: 20px;
-			border: thin solid #00bfff;
-			// 色がない？
-			color: #00bfff;
+			border: thin solid #38AEF0;
+			color: #38AEF0;
 			padding: 0 20px;
 			position: absolute;
 			top: 28px;
@@ -35,31 +34,29 @@
 	.chat__main {
 		height: calc(100% - 190px);
 		background-color: #f8f8f8;
+		// 26pxの余白埋めるbox
+		.chat__box {
+		  height: 26px;
+	 	  background-color: #f8f8f8;
+		}
 		.chat__main__first-content {
-			padding: 46px 40px 20px 40px;
-			border: thin solid #e8e8e8;
-					// 区切り目印のため
-			.chat__main__first-content__group {
-				font-size: 16px;
-				font-weight: bold;
-				color: #434A54;
+			padding: 20px;
+			.chat__main__first-content__list {
+				display: flex;
+				.chat__main__first-content__list__group {
+					font-size: 16px;
+					font-weight: bold;
+					color: #434A54;
+					line-height: 12px;
+				}
+				.chat__main__first-content__list__time {
+					font-size: 12px;
+					color: #999999;
+					line-height: 12px;
+					margin-left: 10px;
+				}
 			}
 			.chat__main__first-content__message {
-				font-size: 14px;
-				color: #434A54;
-				margin-top: 10px;
-			}
-		}
-		.chat__main__content {
-			padding: 20px 40px;
-			border: thin solid #e8e8e8;
-					// 区切り目印のため
-			.chat__main__content__group {
-				font-size: 16px;
-				font-weight: bold;
-				color: #434A54;
-			}
-			.chat__main__content__message {
 				font-size: 14px;
 				color: #434A54;
 				margin-top: 10px;
@@ -68,47 +65,11 @@
 	}
 	// コメント
  	.chat__comment {
+ 		height: 90px;
+ 		width: calc(100% - 380px);
+ 		position: absolute;
+  	bottom: 0;
+  	background-color: #DDDDDD;
+  	padding: 0 40px;
  	}
-}
-
-    //   <div class="more">
-    //     <span><%= image_tag 'arrow_top.png' %></span>
-    //   <ul class="more_list">
-    //     <li>
-    //       <%= link_to '編集', "/tweets/#{@tweet.id}/edit", method: :get %>
-    //     </li>
-    //     <li>
-    //       <%= link_to '削除', "/tweets/#{@tweet.id}", method: :delete %>
-    //     </li>
-    //   </ul>
-    // </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ }
