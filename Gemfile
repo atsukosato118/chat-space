@@ -60,3 +60,4 @@ gem 'erb2haml'
 end
 # アイコンを表示
 gem "font-awesome-rails"
+gem 'devise'
