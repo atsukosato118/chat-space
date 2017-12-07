@@ -1,0 +1,14 @@
+// リセットCSS
+@import "./reset";
+// アイコンの表示font-awesome
+@import "font-awesome";
+// chat.scssの読み込み
+@import "modules/chat";
+// sidebar.scssの読み込み
+@import "modules/sidebar";
+// container.scssの読み込み
+@import "container/container";
+// 画面いっぱい100とした時（100vhは画面100％）
+body {
+  height: 100vh;
+}

@@ -52,8 +52,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Use Haml for template engine
+# ハムルへの変換
 gem 'haml-rails'
 group :development do
   # Convert .erb -> .haml
-  gem 'erb2haml'
+gem 'erb2haml'
 end
+# アイコンを表示
+gem "font-awesome-rails"

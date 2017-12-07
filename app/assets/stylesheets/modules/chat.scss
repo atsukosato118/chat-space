@@ -1,0 +1,101 @@
+// index(チャットスペース)のscss
+$white: #FFFFFF;
+$chatback: #f8f8f8;
+$btn: #38AEF0;
+
+.chat {
+	height: 100%;
+	width: calc(100% - 300px);
+	// ヘッダー
+	&__header {
+		height: 65px;
+	  padding: 35px 40px 0 40px;
+	  border-bottom: thin solid #999999;
+		&__group {
+			font-size: 20px;
+			color: #333333;
+		}
+		&__member{
+			background-color: $white;
+			font-size: 12px;
+			color: #999999;
+			margin-top: 15px;
+		}
+		&__edit-btn {
+			height: 40px;
+			width: auto;
+			font-size: 20px;
+			border: thin solid $btn;
+			color: $btn;
+			padding: 0 20px;
+			position: absolute;
+			top: 28px;
+			right: 40px;
+			line-height: 40px;
+		}
+	}
+	// メイン
+	.chat__main {
+		height: calc(100% - 190px);
+		background-color: $chatback;
+		// 26pxの余白埋めるbox
+		.chat__box {
+		  height: 26px;
+	 	  background-color: $chatback;
+		}
+		&__first-content {
+			padding: 20px;
+			&__list {
+				display: flex;
+				&__group {
+					font-size: 16px;
+					font-weight: bold;
+					color: #434A54;
+					line-height: 12px;
+				}
+				&__time {
+					font-size: 12px;
+					color: #999999;
+					line-height: 12px;
+					margin-left: 10px;
+				}
+			}
+			&__message {
+				font-size: 14px;
+				color: #434A54;
+				margin-top: 10px;
+			}
+		}
+	}
+	// コメント
+ 	.chat__comment {
+ 		height: 90px;
+ 		width: calc(100% - 380px);
+ 		position: absolute;
+  	bottom: 0;
+  	background-color: #DDDDDD;
+  	padding: 0 40px;
+  	display: flex;
+  	.text {
+  		height: 50px;
+  		width: calc(100% - 50px);
+  		margin: 20px 0px 20px 25px;
+  		border:none;
+  	}
+  		&__icon-box {
+  			height: 49.5px;
+  			width: 30px;
+  			background-color: $white;
+  			margin: 20px 0;
+  			line-height: 54px;
+  		}
+  	.send {
+  		height: 50px;
+  		width: 100px;
+  		background-color: $btn;
+  		color: $white;
+  		margin: 20px 0 20px 35px;
+  	}
+ 	}
+}
+
