@@ -1,10 +1,11 @@
 // サイドバー（部分テンプレート）のscss
 $white: #FFFFFF;
+$side: #2f3e51;
 
 .side {
 	height: 100%;
 	width: 300px;
-	background-color: #2f3e51;
+	background-color: $side;
 	&__header {
 		height: 100px;
 		width: 260px;
@@ -36,7 +37,7 @@ $white: #FFFFFF;
 		&__content {
 			width: 260px;
 			padding: 20px;
-			background-color: #2f3e51;
+			background-color: $side;
 			&__name {
 				font-size: 15px;
 				color: $white;

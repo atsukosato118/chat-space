@@ -1,5 +1,7 @@
 // index(チャットスペース)のscss
 $white: #FFFFFF;
+$chatback: #f8f8f8;
+$btn: #38AEF0;
 
 .chat {
 	height: 100%;
@@ -23,8 +25,8 @@ $white: #FFFFFF;
 			height: 40px;
 			width: auto;
 			font-size: 20px;
-			border: thin solid #38AEF0;
-			color: #38AEF0;
+			border: thin solid $btn;
+			color: $btn;
 			padding: 0 20px;
 			position: absolute;
 			top: 28px;
@@ -35,11 +37,11 @@ $white: #FFFFFF;
 	// メイン
 	.chat__main {
 		height: calc(100% - 190px);
-		background-color: #f8f8f8;
+		background-color: $chatback;
 		// 26pxの余白埋めるbox
 		.chat__box {
 		  height: 26px;
-	 	  background-color: #f8f8f8;
+	 	  background-color: $chatback;
 		}
 		.chat__main__first-content {
 			padding: 20px;
@@ -90,7 +92,7 @@ $white: #FFFFFF;
   	.send {
   		height: 50px;
   		width: 100px;
-  		background-color: #38AEF0;
+  		background-color: $btn;
   		color: $white;
   		margin: 20px 0 20px 35px;
   	}
