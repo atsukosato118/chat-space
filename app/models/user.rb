@@ -3,4 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  # user_name/emailにバリデーション
+  validates :user_name, uniqueness: true
+  validates :email, uniqueness: true
 end
+
+#バリデーションはモデルにかく
