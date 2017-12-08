@@ -1,6 +1,5 @@
 / 編集用ページの見た目は、deviseによって作成された新規ユーザー作成ページのものをベースに
 / editアクションに編集画面をつくる。
-/ まだボタンは何もしていない
 #account-page.account-page
   .account-page__inner.clearfix
     .account-page__inner--left.account-page__header
@@ -32,3 +31,4 @@
             = f.password_field :password_confirmation, autocomplete: "off"
         .actions
           = f.submit "Update", class: 'btn'
+
