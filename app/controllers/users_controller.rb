@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
 
 # edit画面に行くときのアクション/編集するデータの取得
-	  def edit
-	  @user = User.find(params[:id])
-	  end
+  def edit
+  @user = User.find(params[:id])
+  end
 
 # updateボタンを押した時/特定のデータを更新
-	  def update
-binding.pry
+	def update
 	  # binding.pryをここでしたらupdateアクションが押された時に処理が止まる
 	  @user = User.find(params[:id])
 	  if @user.update(user_params)
