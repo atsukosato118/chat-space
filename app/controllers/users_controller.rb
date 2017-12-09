@@ -10,23 +10,21 @@ before_action :user_id
 # updateボタンを押した時/特定のデータを更新
 	def update
 		# binding.pryをここでしたらupdateアクションが押された時に処理が止まる
-		if @user.update(user_params)
-			redirect_to :root, alert: '登録内容を変更しました'
-		else
-			flash[:alert]='登録内容を変更してください'
-			render :edit
-		end
+		 current_user.update(user_params)
+		 redirect_to :root
+
+		# @user.update(user_params)
+		# 	redirect_to :root, alert: '登録内容を変更しました'
+		# else
+		# 	flash[:alert]='登録内容を変更してください'
+		# 	render :edit
+		# end
 	end
 
 	private
 	def user_params
 			params.require(:user).permit(:name, :email)
 	end
-		# def move_to_index
-		#   redirect_to controller: 'Messages', action: 'index'
-		#   # Messageコントローラーのindexアクションを強制的に実行する
-		# end
-
 
 	def user_id
 			@user = User.find(params[:id])
