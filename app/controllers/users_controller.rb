@@ -1,34 +1,26 @@
 class UsersController < ApplicationController
 
 # このコントローラー内のアクションをする前にbefore_action :user_idに行く
-before_action :user_id
 
 # edit画面に行くときのアクション/編集するデータの取得
-	def edit
-	end
+  def edit
+  end
 
 # updateボタンを押した時/特定のデータを更新
-	def update
-		# binding.pryをここでしたらupdateアクションが押された時に処理が止まる
-		 current_user.update(user_params)
-		 redirect_to :root
+  def update
+# binding.pryをここでしたらupdateアクションが押された時に処理が止まる
+# current_user（デバイスで設定）のupadateしているため
+  if current_user.update(user_params)
+    redirect_to :root, alert: '登録内容を変更しました'
+  else
+    flash[:alert]='登録内容を変更してください'
+    render :edit
+  end
 
-		# @user.update(user_params)
-		# 	redirect_to :root, alert: '登録内容を変更しました'
-		# else
-		# 	flash[:alert]='登録内容を変更してください'
-		# 	render :edit
-		# end
-	end
-
-	private
-	def user_params
-			params.require(:user).permit(:name, :email)
-	end
-
-	def user_id
-			@user = User.find(params[:id])
-	end
+  private
+  def user_params
+    params.require(:user).permit(:name, :email)
+  end
 end
 
 # 特定のIDのデータを取得したい
@@ -71,4 +63,3 @@ end
 # 使い方
 # モデル.update(カラム名 = 値)
 # @user.update(user_params)は@use(@user = User.find(params[:id]))の内容を変更
-
