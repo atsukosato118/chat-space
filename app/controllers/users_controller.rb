@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 # binding.pryをここでしたらupdateアクションが押された時に処理が止まる
 # current_user（デバイスで設定）のupadateしているため
     if current_user.update(user_params)
-      redirect_to :root, alert: '登録内容を変更しました'
+      redirect_to :root, notice: '登録内容を変更しました'
     else
       flash[:alert]='登録内容を変更してください'
       render :edit
