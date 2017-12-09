@@ -1,27 +1,37 @@
 class UsersController < ApplicationController
 
+# このコントローラー内のアクションをする前にbefore_action :user_idに行く
+before_action :user_id
+
 # edit画面に行くときのアクション/編集するデータの取得
-  def edit
-  @user = User.find(params[:id])
-  end
+	def edit
+	end
 
 # updateボタンを押した時/特定のデータを更新
 	def update
-	  # binding.pryをここでしたらupdateアクションが押された時に処理が止まる
-	  @user = User.find(params[:id])
-	  if @user.update(user_params)
-	  	redirect_to :root, notice: "ok"
-	  else
-	  	render :edit
-	  end
-  end
+		# binding.pryをここでしたらupdateアクションが押された時に処理が止まる
+		if @user.update(user_params)
+			redirect_to :root, alert: '登録内容を変更しました'
+		else
+			flash[:alert]='登録内容を変更してください'
+			render :edit
+		end
+	end
 
-  private
-  def user_params
-  		params.require(:user).permit(:name, :email)
-  end
+	private
+	def user_params
+			params.require(:user).permit(:name, :email)
+	end
+		# def move_to_index
+		#   redirect_to controller: 'Messages', action: 'index'
+		#   # Messageコントローラーのindexアクションを強制的に実行する
+		# end
+
+
+	def user_id
+			@user = User.find(params[:id])
+	end
 end
-
 
 # 特定のIDのデータを取得したい
 # @user = User.find(params[:id])
@@ -56,7 +66,11 @@ end
 # utf8"=>"✓", "_method"=>"patch", "authenticity_token"=>"JdFV8lC+/q6kR2avBSUR8bsknhdkcFjeaDhATMAa3NOxltoY3xQw+Jgata2lPT1Sy/wtFo6hxiPqQfNGzMjO+A=="
 #  "user"=>{"name"=>"atsuko", "email"=>"atsuko@atsuko", "password"=>"", "password_confirmation"=>""}, "commit"=>"Update", "controller"=>"users", "action"=>"update", "id"=>"1"} permitted: false>
 # paramsの中身表示される
- # b(main):003:0> params[:id]
- # idの値を表示
+# b(main):003:0> params[:id]
+# idの値を表示
 
+# データベースから取得したオブジェクトを更新(レコードの更新)
+# 使い方
+# モデル.update(カラム名 = 値)
+# @user.update(user_params)は@use(@user = User.find(params[:id]))の内容を変更
 
