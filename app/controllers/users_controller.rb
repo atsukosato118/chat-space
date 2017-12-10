@@ -10,11 +10,12 @@ class UsersController < ApplicationController
   def update
 # binding.pryをここでしたらupdateアクションが押された時に処理が止まる
 # current_user（デバイスで設定）のupadateしているため
-  if current_user.update(user_params)
-    redirect_to :root, alert: '登録内容を変更しました'
-  else
-    flash[:alert]='登録内容を変更してください'
-    render :edit
+    if current_user.update(user_params)
+      redirect_to :root, notice: '登録内容を変更しました'
+    else
+      flash[:alert]='登録内容を変更してください'
+      render :edit
+    end
   end
 
   private
@@ -62,4 +63,4 @@ end
 # データベースから取得したオブジェクトを更新(レコードの更新)
 # 使い方
 # モデル.update(カラム名 = 値)
-# @user.update(user_params)は@use(@user = User.find(params[:id]))の内容を変更
+#@user.update(user_params)は@use(@user = User.find(params[:id]))の内容を変更
