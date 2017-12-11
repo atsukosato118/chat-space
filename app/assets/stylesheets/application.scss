@@ -9,7 +9,9 @@
 // container.scssの読み込み
 @import "container/container";
 // user.scssの読み込み
-@import "user.scss";
+@import "user";
+// group.scssの読み込み
+@import "group";
 // flash.scssの読み込み
 @import "modules/flash";
 // 画面いっぱい100とした時（100vhは画面100％）
