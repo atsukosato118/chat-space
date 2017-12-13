@@ -9,8 +9,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to :root, notice: 'グループを作成しました'
     else
-      flash[:alert]='グループの作成に失敗しました'
-      render :create
+      render :new, alert: "グループの作成に失敗しました"
     end
   end
 
@@ -33,3 +32,6 @@ class GroupsController < ApplicationController
     # params.require(:撮ってきたい).permit(:name, {groups_ids: []})
   end
 end
+
+# コントローラではエラー文にはredirect_toではなくrenderを使います↓
+# redirect_toでは再読み込みになり、errors.full_messagesのエラー文は表示されません
