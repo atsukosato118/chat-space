@@ -12,6 +12,9 @@ ja:
     registrations:
       user.signed_up: "アカウントが作成されました"
   activerecord:
+    attributes:
+      group:
+        name: "グループの名前"
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
