@@ -2,7 +2,9 @@ class GroupsController < ApplicationController
   before_action :group_id, only: [:edit, :update]
 
   def index
-    @group = Group.all.order("id DESC")
+    @groups = Group.all.order("id DESC")
+  end
+
   def new
      @group = Group.new
   end
