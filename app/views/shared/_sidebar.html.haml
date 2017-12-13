@@ -7,11 +7,10 @@
     = link_to new_group_path do
       %i.fa.fa-pencil-square-o.fa-lg
   .side__main
-    .side__main__content
-      - current_user.groups.each do |group|
+    - current_user.groups.each do |group|
+      .side__main__content
         %p.side__main__content__name
           = group.name
-        %p.side__main__conten
         %p.side__main__content__message The Latest Message1
 
 / リンクの貼り方/ link_toメソッドで引数を指定することで様々なリンクを生成
