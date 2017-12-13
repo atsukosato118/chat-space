@@ -1,5 +1,8 @@
 class GroupsController < ApplicationController
   before_action :group_id, only: [:edit, :update]
+
+  def index
+    @group = Group.all.order("id DESC")
   def new
      @group = Group.new
   end
