@@ -13,12 +13,10 @@ class GroupsController < ApplicationController
     end
   end
 
-  def edit
-    # @group = group.find(params[:id])
-  end
+    def edit
+    end
 
   def update
-    # @group = group.find(params[:id])
     if @group.save
       redirect_to :root, notice: 'グループを作成しました'
     else
