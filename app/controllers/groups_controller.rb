@@ -28,8 +28,9 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:name, {groups_ids: []})
-    # params.require(:撮ってきたい).permit(:name, {groups_ids: []})
+    params.require(:group).permit(:name, {user_ids: []})
+    # params.require(:とってきたい).permit(:name, {uers_ids: []})
+    # ユーザーのidが複数user_ids
   end
 end
 
