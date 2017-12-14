@@ -15,3 +15,14 @@ module ChatSpace
   # jaファイルを読み込むための記述
   end
 end
+
+# 使用しないファイルを作成しないようにする
+module PairsLike
+  class Application < Rails::Application
+    config.generators do |g|
+      g.helper false
+      g.test_framework false
+      g.fixtures false
+    end
+  end
+end

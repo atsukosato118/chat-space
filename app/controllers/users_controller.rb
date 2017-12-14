@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
 
-# このコントローラー内のアクションをする前にbefore_action :user_idに行く
-
 # edit画面に行くときのアクション/編集するデータの取得
   def edit
   end
@@ -37,9 +35,15 @@ end
 # ①requireでPOSTで受け取る値のキーを設定
 # ②permitで許可するカラムを設定(DBに入れるカラムを設定)
 
+# このコードは「params が :user というキーを持ち、
+# params[:user] は :name 及び :email というキーを持つハッシュであること」を検証します。
+# 参考
+# http://www.techscore.com/blog/2013/01/29/rails4-%E3%81%AE-strong-parameters-%E3%81%A7%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E3%82%92%E6%A4%9C%E8%A8%BC%E3%81%99%E3%82%8B/
+
 # ビューから送られてきた情報のハッシュであるparamsの中から:name, :email,
 # というキーとそのバリューのセットだけを残した新たなハッシュを生成しています。
 # この新たなハッシュが、tweet_paramsメソッドの返り値となる
+
 
 # redirect_to :root controller経由でrootパスへ
 # notice: "ok" okの通知
