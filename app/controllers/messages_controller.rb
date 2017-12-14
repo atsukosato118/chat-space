@@ -1,12 +1,14 @@
 class MessagesController < ApplicationController
-  before_action :current_group, only: [:index, :update]
+  # before_action :current_group, only: [:index, :update]
    # インデックスアクションの追加
    # コントローラークラスのインスタンスメソッドはアクションと呼ばれる
-   def index
+   def new
      @group = current_user.groups
      @currentgroup = Group.find(params[:group_id])
 
+     @message = Message.new
      @messages = @currentgroup.messages
+     @groups = current_user.groups.order("id DESC")
 
    end
 
@@ -16,6 +18,7 @@ class MessagesController < ApplicationController
        render group_messages_path, notice:"メッセージの送信に成功しました"
      else
        render group_messages_path, alart:"メッセージの送信に失敗しました"
+    end
   end
 
   private
