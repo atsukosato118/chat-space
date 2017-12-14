@@ -1,13 +1,14 @@
 / サイドバー（部分テンプレート）
 .side
   .side__header
-    %p Atusko Sato
+    .side__header__name
+      = current_user.name
     = link_to edit_user_path(current_user) do
       %i.fa.fa-cog.fa-lg
     = link_to new_group_path do
       %i.fa.fa-pencil-square-o.fa-lg
   .side__main
-    - current_user.groups.each do |group|
+    -@groups.each do |group|
       .side__main__content
         %p.side__main__content__name
           = group.name
@@ -17,3 +18,5 @@
 /  <%= link_to 'ツイート一覧へ', '/tweets', class: 'sample' %>
 / link_to 'リンク文字列', リンク先のパス（URL）
 /  作成したaタグに`class="sample"`属性を付与
+
+-# @groupsを表示したい→@groupsがcontrollerにあるか確認

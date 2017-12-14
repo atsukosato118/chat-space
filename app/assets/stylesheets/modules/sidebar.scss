@@ -12,7 +12,7 @@ $side: #2f3e51;
     width: 260px;
     background-color: #253141;
     padding: 0 20px;
-      p {
+      &__name {
         font-size: 16px;
         font-weight: bold;
         color: $white;
