@@ -18,15 +18,16 @@
           Edit
     .chat__main
       .chat__box
-      - @messages.each do |message|
-        .chat__main__first-content
-          .chat__main__first-content__list
-            %p.chat__main__first-content__list__group
-              = message.body
-            %p.chat__main__first-content__list__time
-              = message.created_at
-          %p.chat__main__first-content__message
-            = message.body
+        = render partial: 'messagelist', collection: @messages, as: :message
+      -# - @messages.each do |message|
+      -#   .chat__main__first-content
+      -#     .chat__main__first-content__list
+      -#       %p.chat__main__first-content__list__group
+      -#         = message.body
+      -#       %p.chat__main__first-content__list__time
+      -#         = message.created_at
+      -#     %p.chat__main__first-content__message
+      -#       = message.body
     .chat__comment
       = form_for [@currentgroup, @message] do |f|
         = f.text_field :body, placeholder: "メッセージを入力してください", id: "message_field"

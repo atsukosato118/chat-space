@@ -43,7 +43,7 @@ $btn: #38AEF0;
 	}
 	// メイン
 	.chat__main {
-    overflow: scroll;
+    overflow-y: scroll;
 		height: calc(100% - 190px);
 		background-color: $chatback;
 		// 26pxの余白埋めるbox
