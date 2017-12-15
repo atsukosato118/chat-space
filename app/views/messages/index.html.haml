@@ -29,7 +29,9 @@
           %p.chat__main__first-content__list__time Time
         %p.chat__main__first-content__message Main Message2
     .chat__comment
-      %input.text{:type => "text"}
+      = form_for [@currentgroup, @message] do |f|
+        = f.text_field :body
         .chat__comment__icon-box
-          %i.fa.fa-picture-o.fa-lg
-        %input.send{:type => "submit", :value => "send"}
+          = f.file_field :image
+          -# .send
+        = f.submit

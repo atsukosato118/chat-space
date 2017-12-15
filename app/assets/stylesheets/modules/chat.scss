@@ -10,6 +10,7 @@ $btn: #38AEF0;
 	&__header {
 		height: 65px;
 	  padding: 35px 40px 0 40px;
+
 	  border-bottom: thin solid #999999;
 		&__group {
 			font-size: 20px;
@@ -24,14 +25,20 @@ $btn: #38AEF0;
 		&__edit-btn {
 			height: 40px;
 			width: auto;
-			font-size: 20px;
+			font-size: 15px;
+      background-color: $white;
 			border: thin solid $btn;
-			color: $btn;
 			padding: 0 20px;
 			position: absolute;
 			top: 28px;
 			right: 40px;
 			line-height: 40px;
+      a:visited {
+        color: $btn;
+      }
+      a:link {
+        text-decoration: none;
+      }
 		}
 	}
 	// メイン

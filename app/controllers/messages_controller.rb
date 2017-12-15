@@ -2,8 +2,8 @@ class MessagesController < ApplicationController
   # before_action :current_group, only: [:index, :update]
    # インデックスアクションの追加
    # コントローラークラスのインスタンスメソッドはアクションと呼ばれる
-   def new
-     @group = current_user.groups
+   def index
+     #@group = current_user.groups
      @currentgroup = Group.find(params[:group_id])
 
      @message = Message.new
@@ -13,9 +13,9 @@ class MessagesController < ApplicationController
    end
 
    def create
-     @message = current_user.messages.new(message_params)
+     @message = Message.new(message_params)
      if @message.save
-       render group_messages_path, notice:"メッセージの送信に成功しました"
+       redirect_to  group_messages_path, notice:"メッセージの送信に成功しました"
      else
        render group_messages_path, alart:"メッセージの送信に失敗しました"
     end
@@ -23,7 +23,7 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:content, :image).merge(group_id: params[:group_id])
+    params.require(:message).permit(:body, :image).merge(user_id: current_user.id, group_id: params[:group_id])
   end
 end
 
@@ -44,7 +44,7 @@ end
 
 # private
 # def message_params
-#   params.require(:message).permit(:content, :image).merge(group_id: params[:group_id])
+#   params.require(:message).permit(:body, :image).merge(group_id: params[:group_id])
 # ユーザーが投稿フォームで送信した値以外のキーもストロングパラメーターを介して取得したい場合に利用（基本的にパラメーターは入力された値のキーしか持たない。つまりgroup_idとuser_idの2つはパラメーターのキーとして存在しないため）
 # ①投稿フォームで入力した値について
 # 1.requireでPOSTで受け取る値のキーを設定
