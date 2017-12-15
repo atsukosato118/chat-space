@@ -8,9 +8,14 @@
   = render "shared/sidebar"
   .chat
     .chat__header
-      %p.chat__header__group Header GroupName
-      %p.chat__header__member Header Member
-      .chat__header__edit-btn Edit
+      .chat__header__group
+        = @currentgroup.name
+      .chat__header__member
+        - @currentgroup.users.each do |user|
+          = user.name
+      .chat__header__edit-btn
+        = link_to edit_group_path(@currentgroup) do
+          Edit
     .chat__main
       .chat__box
       .chat__main__first-content

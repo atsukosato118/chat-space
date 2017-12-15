@@ -22,11 +22,6 @@ class MessagesController < ApplicationController
   end
 
   private
-
-  # def current_group
-  # @currentgroup = Group.find(params[:group_id])
-  # end
-
   def message_params
     params.require(:message).permit(:content, :image).merge(group_id: params[:group_id])
   end
