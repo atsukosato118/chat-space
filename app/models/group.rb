@@ -6,6 +6,7 @@
     has_many :group_users
   end
 
+
   # ## groupsテーブル
 
   # |Column|Type|Options|
