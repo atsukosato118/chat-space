@@ -3,7 +3,6 @@ class MessagesController < ApplicationController
    # インデックスアクションの追加
    # コントローラークラスのインスタンスメソッドはアクションと呼ばれる
    def index
-     #@group = current_user.groups
      @currentgroup = Group.find(params[:group_id])
 
      @message = Message.new
@@ -17,7 +16,7 @@ class MessagesController < ApplicationController
      if @message.save
        redirect_to  group_messages_path, notice:"メッセージの送信に成功しました"
      else
-       render group_messages_path, alart:"メッセージの送信に失敗しました"
+       redirect_to group_messages_path, alert:"メッセージまたは画像を入れてください"
     end
   end
 

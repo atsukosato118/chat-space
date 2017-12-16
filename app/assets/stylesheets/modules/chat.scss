@@ -80,33 +80,15 @@ $btn: #38AEF0;
 	// コメント
  	.chat__comment {
  		height: 90px;
- 		// width: calc(100% - 380px);
- 		// position: absolute;
-  	// bottom: 0;
   	background-color: #DDDDDD;
   	box-sizing: border-box;
-    // #message_image{
-    //   display: none;
-    // }
-    //
-    // #message_body{
-    //   height: 50px;
-  	// 	width: calc(100vw - 600px);
-  	// 	margin: 20px 0px 20px 25px;
-  	// 	border:none;
-    // }
-    //
     #message_field{
       height: 50px;
-  		width: 870px;
+  		width: 850px;
   		margin: 20px 0px 20px 40px;
   		border:none;
       float: left;
     }
-    //
-    // #new_message{
-    //   position: relative;
-    // }
   	&__mask{
       height: 50px;
       width: 50px;
@@ -115,7 +97,6 @@ $btn: #38AEF0;
       float: left;
       background: $white;
     	&__icon-box {
-        // position: absolute;
         top: 0px;
         right: 145px;
   			height: 40px;
