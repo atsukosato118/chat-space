@@ -3,4 +3,9 @@
     %p.side__main__content__name
       = group.name
     %p.side__main__content__message
-      = group.messages.last.body
+      - if group.messages.last.try(:body).present?
+        = group.messages.last.body
+      - elsif group.messages.last.try(:image).present?
+        画像が投稿されています
+      - else
+        メッセージがありません
