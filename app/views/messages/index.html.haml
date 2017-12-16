@@ -1,30 +1,24 @@
 / インデックスのviewファイル
-
-/ ログインしていないとroot(index)に飛べないようにcontrollers/application_controllerに
-/ before_action :authenticate_user!
-/ を記載
-
 .container
   = render "shared/sidebar"
   .chat
     .chat__header
-      %p.chat__header__group Header GroupName
-      %p.chat__header__member Header Member
-      .chat__header__edit-btn Edit
+      .chat__header__group
+        = @currentgroup.name
+      .chat__header__member
+        - @currentgroup.users.each do |user|
+          = user.name
+      .chat__header__edit-btn
+        = link_to edit_group_path(@currentgroup) do
+          Edit
     .chat__main
       .chat__box
-      .chat__main__first-content
-        .chat__main__first-content__list
-          %p.chat__main__first-content__list__group Main GroupName1
-          %p.chat__main__first-content__list__time Time
-        %p.chat__main__first-content__message Main Message1
-      .chat__main__first-content
-        .chat__main__first-content__list
-          %p.chat__main__first-content__list__group Main GroupName2
-          %p.chat__main__first-content__list__time Time
-        %p.chat__main__first-content__message Main Message2
+        = render partial: 'messagelist', collection: @messages, as: :message
     .chat__comment
-      %input.text{:type => "text"}
-        .chat__comment__icon-box
-          %i.fa.fa-picture-o.fa-lg
-        %input.send{:type => "submit", :value => "send"}
+      = form_for [@currentgroup, @message] do |f|
+        = f.text_field :body, placeholder: "メッセージを入力してください", id: "message_field"
+        .chat__comment__mask
+          %label.chat__comment__mask__icon-box
+            %i.fa.fa-picture-o.fa-lg
+            = f.file_field :image, class: "hidden"
+        =f.submit :send, class:"send"

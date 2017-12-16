@@ -1,0 +1,13 @@
+- @messages.each do |message|
+  .chat__main__first-content
+    .chat__main__first-content__list
+      .chat__main__first-content__list__name
+        =current_user.name
+      .chat__main__first-content__list__time
+        = message.created_at.strftime("%Y/%m/%d %H:%M")
+    .chat__main__first-content__message
+      - if message.body.present?
+        = message.body
+    .chat__main__first-content__image
+      - if message.image_url.present?
+        = image_tag message.image_url

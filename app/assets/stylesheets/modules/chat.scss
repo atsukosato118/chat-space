@@ -10,6 +10,7 @@ $btn: #38AEF0;
 	&__header {
 		height: 65px;
 	  padding: 35px 40px 0 40px;
+
 	  border-bottom: thin solid #999999;
 		&__group {
 			font-size: 20px;
@@ -24,18 +25,25 @@ $btn: #38AEF0;
 		&__edit-btn {
 			height: 40px;
 			width: auto;
-			font-size: 20px;
+			font-size: 15px;
+      background-color: $white;
 			border: thin solid $btn;
-			color: $btn;
 			padding: 0 20px;
 			position: absolute;
 			top: 28px;
 			right: 40px;
 			line-height: 40px;
+      a:visited {
+        color: $btn;
+      }
+      a:link {
+        text-decoration: none;
+      }
 		}
 	}
 	// メイン
 	.chat__main {
+    overflow-y: scroll;
 		height: calc(100% - 190px);
 		background-color: $chatback;
 		// 26pxの余白埋めるbox
@@ -44,7 +52,7 @@ $btn: #38AEF0;
 	 	  background-color: $chatback;
 		}
 		&__first-content {
-			padding: 20px;
+			padding: 40px;
 			&__list {
 				display: flex;
 				&__group {
@@ -56,7 +64,6 @@ $btn: #38AEF0;
 				&__time {
 					font-size: 12px;
 					color: #999999;
-					line-height: 12px;
 					margin-left: 10px;
 				}
 			}
@@ -65,36 +72,53 @@ $btn: #38AEF0;
 				color: #434A54;
 				margin-top: 10px;
 			}
-		}
+    }
+  .fieldset, img {
+      width: 300px;
+  }
 	}
 	// コメント
  	.chat__comment {
  		height: 90px;
- 		// width: calc(100% - 380px);
- 		// position: absolute;
-  	// bottom: 0;
   	background-color: #DDDDDD;
-  	padding: 0 40px;
-  	display: flex;
-  	.text {
-  		height: 50px;
-  		width: calc(100% - 50px);
-  		margin: 20px 0px 20px 25px;
+  	box-sizing: border-box;
+    #message_field{
+      height: 50px;
+  		width: 850px;
+  		margin: 20px 0px 20px 40px;
   		border:none;
-  	}
-  		&__icon-box {
-  			height: 49.5px;
-  			width: 30px;
+      float: left;
+    }
+  	&__mask{
+      height: 50px;
+      width: 50px;
+      margin: 20px 0px;
+      border:none;
+      float: left;
+      background: $white;
+    	&__icon-box {
+        top: 0px;
+        right: 145px;
+  			height: 40px;
+  			width: 20px;
   			background-color: $white;
   			margin: 20px 0;
   			line-height: 54px;
+        .hidden{
+          display: none;
+        }
   		}
-  	.send {
+    }
+    input::-webkit-input-placeholder {
+      padding-left: 10px;
+    }
+  .send {
   		height: 50px;
   		width: 100px;
   		background-color: $btn;
   		color: $white;
-  		margin: 20px 0 20px 35px;
-  	}
- 	}
+  		margin: 20px 40px 20px 25px;
+      float: right;
+  }
+}
 }

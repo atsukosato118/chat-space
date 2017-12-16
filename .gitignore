@@ -12,6 +12,10 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
+*.pid
+*.keep
+/public/*
 # Ignore Byebug command history file.
 .byebug_history
+# Ignore image file
+/public/uploads/
