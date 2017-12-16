@@ -12,11 +12,16 @@ class MessagesController < ApplicationController
    end
 
    def create
+     @currentgroup = Group.find(params[:group_id])
+     @messages = @currentgroup.messages
+     @groups = current_user.groups.order("id DESC")
+
      @message = Message.new(message_params)
      if @message.save
        redirect_to  group_messages_path, notice:"メッセージの送信に成功しました"
      else
-       redirect_to group_messages_path, alert:"メッセージまたは画像を入れてください"
+       flash.now[:alert] = "メッセージまたは画像を入れてください"
+       render :index
     end
   end
 
