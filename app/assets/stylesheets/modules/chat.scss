@@ -52,7 +52,7 @@ $btn: #38AEF0;
 	 	  background-color: $chatback;
 		}
 		&__first-content {
-			padding: 20px;
+			padding: 40px;
 			&__list {
 				display: flex;
 				&__group {
@@ -64,7 +64,6 @@ $btn: #38AEF0;
 				&__time {
 					font-size: 12px;
 					color: #999999;
-					line-height: 12px;
 					margin-left: 10px;
 				}
 			}
@@ -73,7 +72,10 @@ $btn: #38AEF0;
 				color: #434A54;
 				margin-top: 10px;
 			}
-		}
+    }
+  .fieldset, img {
+      width: 300px;
+  }
 	}
 	// コメント
  	.chat__comment {
@@ -82,55 +84,60 @@ $btn: #38AEF0;
  		// position: absolute;
   	// bottom: 0;
   	background-color: #DDDDDD;
-  	padding: 0 40px;
-  	display: flex;
-    #message_image{
-      display: none;
-    }
-
-    #message_body{
-      height: 50px;
-  		width: calc(100vw - 600px);
-  		margin: 20px 0px 20px 25px;
-  		border:none;
-    }
-
-    #message_field{
-      height: 50px;
-  		width: calc(100vw - 600px);
-  		margin: 20px 0px 20px 25px;
-  		border:none;
-    }
-
-    #new_message{
-      position: relative;
-    }
-  	// .text {
-  	// 	height: 50px;
-  	// 	width: calc(100% - 50px);
+  	box-sizing: border-box;
+    // #message_image{
+    //   display: none;
+    // }
+    //
+    // #message_body{
+    //   height: 50px;
+  	// 	width: calc(100vw - 600px);
   	// 	margin: 20px 0px 20px 25px;
   	// 	border:none;
-  	// }
-  		&__icon-box {
-        position: absolute;
+    // }
+    //
+    #message_field{
+      height: 50px;
+  		width: 870px;
+  		margin: 20px 0px 20px 40px;
+  		border:none;
+      float: left;
+    }
+    //
+    // #new_message{
+    //   position: relative;
+    // }
+  	&__mask{
+      height: 50px;
+      width: 50px;
+      margin: 20px 0px;
+      border:none;
+      float: left;
+      background: $white;
+    	&__icon-box {
+        // position: absolute;
         top: 0px;
         right: 145px;
   			height: 40px;
-  			width: 25px;
+  			width: 20px;
   			background-color: $white;
   			margin: 20px 0;
   			line-height: 54px;
+        .hidden{
+          display: none;
+        }
   		}
+    }
     input::-webkit-input-placeholder {
       padding-left: 10px;
     }
-  	.send {
+  .send {
   		height: 50px;
   		width: 100px;
   		background-color: $btn;
   		color: $white;
-  		margin: 20px 0 20px 35px;
+  		margin: 20px 40px 20px 25px;
       float: right;
-  	}
- 	}
+  }
+}
 }

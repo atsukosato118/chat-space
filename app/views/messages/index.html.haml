@@ -1,9 +1,4 @@
 / インデックスのviewファイル
-
-/ ログインしていないとroot(index)に飛べないようにcontrollers/application_controllerに
-/ before_action :authenticate_user!
-/ を記載
-
 .container
   = render "shared/sidebar"
   .chat
@@ -19,19 +14,11 @@
     .chat__main
       .chat__box
         = render partial: 'messagelist', collection: @messages, as: :message
-      -# - @messages.each do |message|
-      -#   .chat__main__first-content
-      -#     .chat__main__first-content__list
-      -#       %p.chat__main__first-content__list__group
-      -#         = message.body
-      -#       %p.chat__main__first-content__list__time
-      -#         = message.created_at
-      -#     %p.chat__main__first-content__message
-      -#       = message.body
     .chat__comment
       = form_for [@currentgroup, @message] do |f|
         = f.text_field :body, placeholder: "メッセージを入力してください", id: "message_field"
-        %label.chat__comment__icon-box
-          = f.file_field :image
-          %i.fa.fa-picture-o.fa-lg
+        .chat__comment__mask
+          %label.chat__comment__mask__icon-box
+            %i.fa.fa-picture-o.fa-lg
+            = f.file_field :image, class: "hidden"
         =f.submit :send, class:"send"

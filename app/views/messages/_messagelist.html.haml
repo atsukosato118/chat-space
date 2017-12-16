@@ -1,8 +1,11 @@
-.chat__main__first-content
-  .chat__main__first-content__list
-    %p.chat__main__first-content__list__group
+- @messages.each do |message|
+  .chat__main__first-content
+    .chat__main__first-content__list
+      .chat__main__first-content__list__name
+        =current_user.name
+      .chat__main__first-content__list__time
+        = message.created_at.strftime("%Y/%m/%d %H:%M")
+    .chat__main__first-content__message
       = message.body
-    %p.chat__main__first-content__list__time
-      = message.created_at
-  %p.chat__main__first-content__message
-    = message.body
+    .chat__main__first-content__image
+      = image_tag message.image_url
