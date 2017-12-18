@@ -12,7 +12,7 @@ gem 'rails', '~> 5.0.6'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
-# Use SCSS for stylesheets
+#Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -35,12 +35,23 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#テスト環境と開発環境に必要
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'pry-rails'
+  #rspecの適用
+  gem 'rspec-rails'
+  # factory_girl_railsの適用
+  #テストデータからオブジェクを作る
+  gem 'factory_girl_rails', "~> 4.4.1"
+  # ダミーデータの生成
+  gem 'faker'
+  # ファクトリを生成する
+  gem 'rails-controller-testing'
 end
 
+#開発環境のみ必要
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
