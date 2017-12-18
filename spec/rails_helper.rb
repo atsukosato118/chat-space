@@ -35,6 +35,9 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+# deviseのtest_helperとmacrosをcontroller内で使えるように
+  config.include Devise::TestHelpers, type: :controller
+  config.include ControllerMacros, type: :controller
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
@@ -56,3 +59,6 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+# deviseとmacrosを読み込み
+require 'devise'
+require File.expand_path("spec/support/controller_macros.rb")
