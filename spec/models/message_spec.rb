@@ -4,12 +4,12 @@ describe Message do
   describe '#create' do
     # メッセージがあれば保存できる
     it "is valid with a message " do
-      message = build(:message, body: nil)
+      message = build(:message, image: nil)
       expect(message).to be_valid
     end
     # 画像があれば保存できる
     it "is valid with a image " do
-      message = build(:message, image: nil)
+      message = build(:message, body: nil)
       expect(message).to be_valid
     end
      # メッセージと画像があれば保存できる
