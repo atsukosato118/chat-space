@@ -7,7 +7,7 @@ describe MessagesController, type: :controller do
 
   describe 'GET #index' do
     before do
-      login_user user
+      sign_in user
       # controller_macros.rb内のlogin_userメソッドを呼び出し
     end
 
