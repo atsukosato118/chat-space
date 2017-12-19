@@ -1,4 +1,4 @@
-message_controller_spec.rb
+
 require 'rails_helper'
 
 describe MessagesController, type: :controller do
@@ -13,4 +13,5 @@ describe MessagesController, type: :controller do
 
     it "renders the :index template" do
     end
+  end
 end
