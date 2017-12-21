@@ -3,7 +3,6 @@ $(document).on('turbolinks:load', function(){
   function buildHTML(message) {
     //console.log("html");
     // buildHTMLが呼べているか？
-    if message.image.url
     // console.log(message.image.url);
     // imageのurlがあるか？
     var html = `<div class ="chat__main__first-content">
@@ -18,12 +17,17 @@ $(document).on('turbolinks:load', function(){
                   <div class = "chat__main__first-content__message">
                       ${message.body}
                   </div>
-                  <div class = "chat__main__first-content__image">
-                      ${message.image}
-                  </div>`
-    return html;
-  };
-
+                  // 表示されないのは変数のせい？と思ったら文字列にして確認
+    html +=
+        (message.image.url) ?
+          (
+            `<div class= chatspace-content__chat> <img src= "${message.image.url}"></div>`
+          ):
+          (
+            `</div>`
+          );
+        return html;
+      }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
