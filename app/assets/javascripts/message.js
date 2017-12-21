@@ -1,6 +1,27 @@
 $(document).on('turbolinks:load', function(){
 
   function buildHTML(message) {
+    //console.log("html");
+    // buildHTMLが呼べているか？
+    if message.image.url
+    // console.log(message.image.url);
+    // imageのurlがあるか？
+    var html = `<div class ="chat__main__first-content">
+                  <div class ="chat__main__first-content__list">
+                    <div class ="chat__main__first-content__list__name">
+                      ${message.user}
+                    </div>
+                    <div class = "chat__main__first-content__list__time">
+                      ${message.time}
+                    </div>
+                  </div>
+                  <div class = "chat__main__first-content__message">
+                      ${message.body}
+                  </div>
+                  <div class = "chat__main__first-content__image">
+                      ${message.image}
+                  </div>`
+    return html;
   };
 
   $('#new_message').on('submit', function(e){
@@ -17,8 +38,9 @@ $(document).on('turbolinks:load', function(){
       contentType: false
     })
     .done(function(data){
+      // console.log('ajax化')
       var html = buildHTML(data);
-      $('.chat_box').append(html)
+      $('.chat__box').append(html)
       $('#message_fild').val('')
     })
     .fail(function(data) {
