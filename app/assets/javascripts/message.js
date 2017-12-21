@@ -1,10 +1,8 @@
 $(document).on('turbolinks:load', function(){
 
   function buildHTML(message) {
-    //console.log("html");
-    // buildHTMLが呼べているか？
-    // console.log(message.image.url);
-    // imageのurlがあるか？
+    //console.log("html");でbuildHTMLが呼べているか確認
+    // console.log(message.image.url);でimageのurlがあるか確認
     var html = `<div class ="chat__main__first-content">
                   <div class ="chat__main__first-content__list">
                     <div class ="chat__main__first-content__list__name">
@@ -17,22 +15,23 @@ $(document).on('turbolinks:load', function(){
                   <div class = "chat__main__first-content__message">
                       ${message.body}
                   </div>
+
                   // 表示されないのは変数のせい？と思ったら文字列にして確認
-    html +=
-        (message.image.url) ?
-          (
-            `<div class= chatspace-content__chat> <img src= "${message.image.url}"></div>`
-          ):
-          (
-            `</div>`
-          );
-        return html;
-      }
+              html +=
+                  (message.image.url) ?
+                    (
+                      `<div class= chatspace-content__chat> <img src= "${message.image.url}"><div></div>`
+                    ):
+                    (
+                      </div>`
+                    );
+                  return html;
+                }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
-    // console.log(url);
+    // console.log(url);でaction属性が取れているか確認
     $.ajax({
       url: url,
       type: "POST",
@@ -42,7 +41,7 @@ $(document).on('turbolinks:load', function(){
       contentType: false
     })
     .done(function(data){
-      // console.log('ajax化')
+      // console.log('ajax化成功')でajax化できているか確認
       var html = buildHTML(data);
       $('.chat__box').append(html)
       $('#message_fild').val('')

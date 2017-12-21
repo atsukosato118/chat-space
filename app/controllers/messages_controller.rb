@@ -14,11 +14,11 @@ class MessagesController < ApplicationController
    def create
      @message = Message.new(message_params)
      if @message.save
-       # binding.pry
-       # @messageが渡されているか確認
+       # binding.pry@messageが渡されているか確認
        respond_to do |format|
          format.html { redirect_to group_messages_path(params[:group_id]) }
          format.json
+         # format.html はデフォルトのurlが実はhttp://localhost:3000/groups/53/messages.htmlなのでHTMLがないとエラーが起こる
          # 今回ajaxでjsonに指定
          # jsonで送信されたらwebの更新リロードのとこは変化しない
          # jsonの内容はcreate.json.jbuilder
@@ -27,12 +27,6 @@ class MessagesController < ApplicationController
       render :index
     end
   end
-     # ajax化するまでのコード
-     # if @message.save
-     #   redirect_to  group_messages_path, notice:"メッセージの送信に成功しました"
-     # else
-     #   flash.now[:alert] = "メッセージまたは画像を入れてください"
-     #   render :index
 
   private
   def message_params

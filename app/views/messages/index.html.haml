@@ -22,3 +22,8 @@
             %i.fa.fa-picture-o.fa-lg
             = f.file_field :image, class: "hidden"
         =f.submit :send, class:"send"
+
+-# 一つの記事項目をテンプレート化して、それを繰り返し表示することで一覧を表示するように部分テンプレートを繰り返し処理
+-# :collection => (繰り返し表示させるためのインスタンス） %>
+-# @messagesの要素の数だけ部分テンプレートが繰り返されます
+-# ローカル変数を別の名前で使用したい場合はasオプション
