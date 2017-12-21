@@ -47,4 +47,7 @@ $(document).on('turbolinks:load', function(){
 // 4.done(function(data)
 // function buildHTML(message)の内容を実行
 // ※turblinks対応の記述
+// turblinksはCSSとJSをまとめて持ってきて保持する（動作が早くなるため）がHTMLは持っていかない
+// JQにはHTMLが必要なため１回目は読み込まず２回目以降（リロード）すると読み込む
 // $(document).on('turbolinks:load'
+// もしくはapplication.jsの//= require turbolinksを消す
