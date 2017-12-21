@@ -4,17 +4,35 @@ class MessagesController < ApplicationController
    # コントローラークラスのインスタンスメソッドはアクションと呼ばれる
    def index
      @message = Message.new
+
+     respond_to do |format|
+      format.html
+      format.json
+    end
    end
 
    def create
      @message = Message.new(message_params)
      if @message.save
-       redirect_to  group_messages_path, notice:"メッセージの送信に成功しました"
-     else
-       flash.now[:alert] = "メッセージまたは画像を入れてください"
-       render :index
-     end
+       # binding.pry
+       # @messageが渡されているか確認
+       respond_to do |format|
+         format.html { redirect_to group_messages_path(params[:group_id]) }
+         format.json
+         # 今回ajaxでjsonに指定
+         # jsonで送信されたらwebの更新リロードのとこは変化しない
+         # jsonの内容はcreate.json.jbuilder
+      end
+    else
+      render :index
+    end
   end
+     # ajax化するまでのコード
+     # if @message.save
+     #   redirect_to  group_messages_path, notice:"メッセージの送信に成功しました"
+     # else
+     #   flash.now[:alert] = "メッセージまたは画像を入れてください"
+     #   render :index
 
   private
   def message_params
@@ -27,6 +45,7 @@ class MessagesController < ApplicationController
     @groups = current_user.groups.order("id DESC")
   end
 end
+
 # サイドバーに表示する
 # @groups = current_user.groups
 # current_userの所属しているグループを全て取り出す
