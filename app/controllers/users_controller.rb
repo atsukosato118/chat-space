@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 # ユーザーの検索
   def index
     # binding.pryでparamsの中身を確認
-    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
+    @users = User.where('name LIKE(?)', "#{params[:keyword]}%")
     # binding.pryで@userの確認
      # paramsとして送られてきたkeyword（入力された語句）で、Userモデルのnameカラムを検索し、その結果を@usersに代入する
     # params[:keyword]}はjs(ajax)のとこからの値

@@ -1,25 +1,25 @@
 // turbolinksだけど1回目からjs読み込むように
 $(document).on('turbolinks:load', function(){
   // 処理関数を定義
-  var search_list = ("#user-search-result");
+  var search_list = $("#user-search-result");
 
   function appendUser(user) {
   // インクリメンタルサーチの時に追加するHTML
-    var html = `<div class="chat-group-user clearfix">
+    var search_html = `<div class="chat-group-user clearfix">
                 <p class="chat-group-user__name">${ user.name }</p>
                 <a class="user-search-add chat-group-user__btn
                 chat-group-user__btn--add" data-user-id="${ user.id }" data-user-name="${ user.name }">追加</a>
                 </div>`
-    search_list.append(html);
+                // console.log(search_html);でHTMLファイルが取れるか確認
+    search_list.append(search_html);
   }
-
   // userなしの処理
   function appendNoUser(user) {
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user_name">${user}</p>
                 </div>`
                 // ${user}のuserは引数
-    search_list.append(html);
+    search_list.append(search_html);
   }
    // ajax化するタイミング
   $("#user-search-field").on("keyup", function(e) {
@@ -58,12 +58,12 @@ $(document).on('turbolinks:load', function(){
         alert('検索に失敗しました');
       });
 
-    $(".chat-group-form__field.clearfix").on("click", "a", function() {
+    $(".chat-group-form__field.clearfix").on("click", "user-search-add", function() {
 
       var user = $(this)
       user_id = user.data('user-id')
       user_name = user.data('user-name')
-        addUser(user_id, user_name)
+        addMember(user_id, user_name)
         $(this).parent().remove();
     })
   });
