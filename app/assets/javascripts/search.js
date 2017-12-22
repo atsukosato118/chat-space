@@ -1,6 +1,5 @@
 $(document).on('turbolinks:load', function(){
 
-}
   $("#user-search-field").on("keyup", function(e) {
   e.preventDefault();
     var input = $("#user-search-field").val();
@@ -9,9 +8,32 @@ $(document).on('turbolinks:load', function(){
     $.ajax({
       type: 'GET',
       url: '/users',
-      data: { keyword: input },
+      data: {keyword: input},
       dataType: 'json'
     })
+    .done(function(users) {
+      // console.log(users)でjsonが帰って来ているか？
+      $("#user-search-field").empty();
+      if (users.length !== 0) {
+
+        users.forEach( function(user){
+           appendUser(user);
+        });
+        }
+        else {
+          appendNoUser("該当するユーザーは存在しません");
+        }
+    })
+    .fail(function() {
+      alert('検索に失敗しました');
+    });
+    return false;
+    //   console.log('ajax化成功')
+    //   $("#user-search-field").empty();
+    //   if (users.length !== 0) {
+    //     users.forEach(function(user){
+    //       appendUser(user);
+    //     });
   });
 });
 
