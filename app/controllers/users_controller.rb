@@ -1,5 +1,14 @@
 class UsersController < ApplicationController
-
+# ユーザーの検索
+  def index
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
+     # paramsとして送られてきたkeyword（入力された語句）で、Userモデルのnameカラムを検索し、その結果を@usersに代入する
+    # params[:keyword]}はjs(ajax)のとこからの値
+    # jsonで返す
+    respond_to do |format|
+     format.json
+   end
+  end
 # edit画面に行くときのアクション/編集するデータの取得
   def edit
   end
