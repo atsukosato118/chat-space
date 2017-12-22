@@ -10,7 +10,7 @@ $(document).on('turbolinks:load', function(){
                 <a class="user-search-add chat-group-user__btn
                 chat-group-user__btn--add" data-user-id="${ user.id }" data-user-name="${ user.name }">追加</a>
                 </div>`
-    search_list.append(search_html)
+    search_list.append(search_html);
   }
 
   // userなしの処理
@@ -19,7 +19,7 @@ $(document).on('turbolinks:load', function(){
                   <p class="chat-group-user_name">${user}</p>
                 </div>`
                 // ${user}のuserは引数
-    search_list.append(search_html)
+    search_list.append(html);
   }
 
    // ajax化するタイミング
@@ -57,14 +57,32 @@ $(document).on('turbolinks:load', function(){
     .fail(function(data) {
       alert('検索に失敗しました');
     });
-    // $(".chat-group-form__field.clearfix").on("click", "chat-group-user", function() {
-    //
-    //   var user = $(this)
-    //   user_id = user.data('user-id')
-    //   user_name = user.data('user-name')
-    //     addUser(user_id, user_name)
-    //     $(this).parent().remove();
-    // })
+
+    function addUser(user_id, user_name) {
+        var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
+                      <input name='group[user_ids][]' type='hidden' value='${ user_id }'>
+                      <p class='chat-group-user__name'> ${user_name} </p>
+                      <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+                    </div>`
+        $("#chat-group-users").append(html);
+    }
+
+    $(".chat-group-form__field--right").on("click", ".user-search-add", function() {
+       var user = $(this)
+       // console.log(this);でthisが取れているか確認
+       user_id = user.data('user-id')
+       user_name = user.data('user-name')
+       // console.log(user_id);console.log(user_user);で値が取れているか確認S
+         addUser(user_id, user_name)
+         $(this).parent().remove();
+    })
+    $(function() {
+      $(".chat-group-form__field--right").on("click",".user-search-remove", function() {
+        var user = $(this).parent();
+        // console.log(this);で値が取れているか確認
+        user.remove();
+      })
+    })
   })
 });
 
