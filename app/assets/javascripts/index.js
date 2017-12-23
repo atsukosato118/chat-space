@@ -45,9 +45,7 @@ $(document).on('turbolinks:load', function(){
         // console.log(message);で取れてるか確認
           var html = buildHTML(message)
             $(".chat__box").append(html);
-            console.log("a");
-          $('.chat__box').animate({scrollTop: $('.chat__box')[0].scrollHeight}, 'fast');
-            console.log("b");
+            $('.chat__box').animate({scrollTop: $('.chat__box')[0].scrollHeight}, 'fast');
       });
     });
   }, 5000 );

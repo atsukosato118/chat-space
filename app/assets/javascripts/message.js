@@ -42,12 +42,11 @@ $(document).on('turbolinks:load', function(){
     })
     .done(function(data){
       // console.log('ajax化成功')でajax化できているか確認
-      console.log(data)
+      // console.log(data)でデータ確認
       var html = buildHTML(data);
       $('.chat__box').append(html);
       $('#message_field').val('');
       $('.chat__box').animate({scrollTop: $('.chat__box')[0].scrollHeight}, 'fast');
-        console.log("b");
     })
     .fail(function(data) {
       alert('メッセージを入力してください');
