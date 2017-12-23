@@ -1,5 +1,20 @@
 class UsersController < ApplicationController
-
+# ユーザーの検索
+  def index
+    # binding.pryでparamsの中身を確認
+    @users = User.where('name LIKE(?)', "#{params[:keyword]}%")
+    # binding.pryで@userの確認
+     # paramsとして送られてきたkeyword（入力された語句）で、Userモデルのnameカラムを検索し、その結果を@usersに代入する
+    # params[:keyword]}はjs(ajax)のとこからの値
+    # jsonで返す
+    # where ある条件にあてはまるものの最初の1つを取得する
+     # whereは範囲を絞っただけなので、その範囲の中のどれを使うかを指定する必要があります
+     # LIKE句は、曖昧(あいまい)な文字列の検索をすることができるもので、whereメソッドと一緒に使います
+     # %	任意の文字列(空白文字列含む)
+    respond_to do |format|
+     format.json
+   end
+  end
 # edit画面に行くときのアクション/編集するデータの取得
   def edit
   end

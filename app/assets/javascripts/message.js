@@ -14,16 +14,16 @@ $(document).on('turbolinks:load', function(){
                   </div>
                   <div class = "chat__main__first-content__message">
                       ${message.body}
-                  </div>
+                  </div>`
 
                   // 表示されないのは変数のせい？と思ったら文字列にして確認
               html +=
                   (message.image.url) ?
                     (
-                      `<div class= chatspace-content__chat> <img src= "${message.image.url}"><div></div>`
+                      `<div class= chatspace-content__chat> <img src= "${message.image.url}"></div></div>`
                     ):
                     (
-                      </div>`
+                      `</div>`
                     );
                   return html;
                 }
