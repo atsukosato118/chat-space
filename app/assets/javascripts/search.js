@@ -57,7 +57,7 @@ $(document).on('turbolinks:load', function(){
     .fail(function(data) {
       alert('検索に失敗しました');
     });
-
+  });
     function addUser(user_id, user_name) {
         var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
                       <input name='group[user_ids][]' type='hidden' value='${ user_id }'>
@@ -69,9 +69,12 @@ $(document).on('turbolinks:load', function(){
 
     $(".chat-group-form__field--right").on("click", ".user-search-add", function() {
        var user = $(this)
-       // console.log(this);でthisが取れているか確認
+       console.log(this);
+       // console.log(ths);でthisが取れているか確認
        user_id = user.data('user-id')
        user_name = user.data('user-name')
+        // console.log(user_id);
+        //  console.log(user_name);
        // console.log(user_id);console.log(user_user);で値が取れているか確認S
          addUser(user_id, user_name)
          $(this).parent().remove();
@@ -83,7 +86,6 @@ $(document).on('turbolinks:load', function(){
         user.remove();
       })
     })
-  })
 });
 
 // $(document).on('turbolinks:load', function(){

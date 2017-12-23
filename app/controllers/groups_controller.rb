@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
     end
 
   def update
-    if @group.save
+    if @group.update(group_params)
       redirect_to :root, notice: 'グループを作成しました'
     else
       render :edit, alart: 'グループの作成に失敗しました'
