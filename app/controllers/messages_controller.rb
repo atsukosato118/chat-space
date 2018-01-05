@@ -4,10 +4,9 @@ class MessagesController < ApplicationController
    # コントローラークラスのインスタンスメソッドはアクションと呼ばれる
    def index
      @message = Message.new
-
      respond_to do |format|
       format.html
-      format.json
+      format.json{ @new_messages = @currentgroup.messages.where("id > ?", params[:id]) }
     end
    end
 
@@ -35,7 +34,7 @@ class MessagesController < ApplicationController
 
   def message_group
     @currentgroup = Group.find(params[:group_id])
-    @messages = @currentgroup.messages
+    @messages = @currentgroup.messages.includes(:user)
     @groups = current_user.groups.order("id DESC")
   end
 end
@@ -70,3 +69,7 @@ end
 # 1.current_user.messagesでcurrent_userのmessagesを取得
 # 2.取得したcurrent_userのmessagesに対してcreateメソッドを適用
 # 3.message_paramsの返り値はハッシュ{contant: "コメント", image: "〜.jpg", group_id:, params[:group_id]"}
+
+
+# 自動更新
+# @messages.where

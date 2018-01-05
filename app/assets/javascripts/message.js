@@ -3,7 +3,7 @@ $(document).on('turbolinks:load', function(){
   function buildHTML(message) {
     //console.log("html");でbuildHTMLが呼べているか確認
     // console.log(message.image.url);でimageのurlがあるか確認
-    var html = `<div class ="chat__main__first-content">
+    var html = `<div class ="chat__main__first-content" data-message-id=${message.id}>
                   <div class ="chat__main__first-content__list">
                     <div class ="chat__main__first-content__list__name">
                       ${message.user}
@@ -42,9 +42,11 @@ $(document).on('turbolinks:load', function(){
     })
     .done(function(data){
       // console.log('ajax化成功')でajax化できているか確認
+      // console.log(data)でデータ確認
       var html = buildHTML(data);
-      $('.chat__box').append(html)
-      $('#message_fild').val('')
+      $('.chat__box').append(html);
+      $('#message_field').val('');
+      $('.chat__box').animate({scrollTop: $('.chat__box')[0].scrollHeight}, 'fast');
     })
     .fail(function(data) {
       alert('メッセージを入力してください');
