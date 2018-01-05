@@ -1,7 +1,7 @@
 json.user @message.user.name
 json.body  @message.body
 json.image @message.image
-json.time @message.create_time(message.created_at)
+json.time create_time @message.created_at
 
 # アソシエーションを組んでいるので
 # @message.user.name

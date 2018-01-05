@@ -44,7 +44,7 @@ $(document).on('turbolinks:load', function(){
       // console.log('ajax化成功')でajax化できているか確認
       var html = buildHTML(data);
       $('.chat__box').append(html)
-      $('#message_fild').val('')
+      $('#message_field').val('')
     })
     .fail(function(data) {
       alert('メッセージを入力してください');

@@ -1,6 +1,6 @@
 module MessageHelper
   def create_time(created_at)
-  created_at.in_time_zone('Tokyo').strftime("%Y/%m/%d %H:%M:%S")
+    created_at.in_time_zone('Tokyo').strftime("%Y/%m/%d %H:%M:%S")
   end
 end
 
