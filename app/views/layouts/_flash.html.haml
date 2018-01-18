@@ -1,2 +1,16 @@
 - flash.each do |key, value|
   = content_tag(:div, value, class: "flash flash__#{key}")
+
+  -# 例えば・・・
+  -# - flash.each do |key, value|
+  -#
+  -# flash[:alert]='登録内容を変更してください'
+  -# keyが:alert
+  -# valueが'登録内容を変更してください'
+
+  -# = content_tag(:div, value, class: "flash flash__#{key}")
+  -#
+  -# content_tagでHTMLを生成
+  -# 第一引数にタグ、第二引数に内容、第三引数にオプション（ classなど）
+  -# divタグでvaluの値（'登録内容を変更してください'）を表示
+  -# classにflashとflash__#{key}の2つを設定することで、keyがnoticeの時とalertの時でscssの表示を変える

@@ -5,8 +5,11 @@ class GroupsController < ApplicationController
     @groups = current_user.groups.order("id DESC")
   end
 
+     # グループの新規作成
   def new
      @group = Group.new
+     # 現在ログイン中のユーザーを、新規作成したグループに追加
+     @group.users << current_user
   end
 
   def create
@@ -42,12 +45,17 @@ class GroupsController < ApplicationController
   end
 end
 
-# コントローラではエラー文にはredirect_toではなくrenderを使います↓
-# redirect_toでは再読み込みになり、errors.full_messagesのエラー文は表示されません
+    # コントローラではエラー文にはredirect_toではなくrenderを使います↓
+    # redirect_toでは再読み込みになり、errors.full_messagesのエラー文は表示されません
 
-# サイドバーに表示する
-# current_userの所属しているグループを全て取り出す
-# @groups = current_user.groupsと定義
-# controller/group/index
-# →view/group/index
-# →/shared/_sidebar.html.hamlに@groupsが存在するか確認
+    # サイドバーに表示する
+    # current_userの所属しているグループを全て取り出す
+    # @groups = current_user.groupsと定義
+    # controller/group/index
+    # →view/group/index
+    # →/shared/_sidebar.html.hamlに@groupsが存在するか確認
+
+    # params.require(:group).permit(:name, {user_ids: []})
+    #
+    # paramsの中のvalueになってるハッシュ{name: ~, user_ids[]}
+    # []の中はinputで入力した値

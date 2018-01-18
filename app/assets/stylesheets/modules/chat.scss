@@ -43,6 +43,7 @@ $btn: #38AEF0;
 	}
 	// メイン
 	.chat__main {
+    // スクロール機能
     overflow-y: scroll;
 		height: calc(100% - 190px);
 		background-color: $chatback;

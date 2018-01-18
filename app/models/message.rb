@@ -7,7 +7,7 @@ class Message < ApplicationRecord
   def emptymessage
     body.presence || image.presence
   end
-
+  # image_uploaderをマウント
   mount_uploader :image, ImageUploader
 
   def create_time(created_at)

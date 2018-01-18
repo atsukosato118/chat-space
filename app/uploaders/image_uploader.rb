@@ -2,7 +2,10 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
+  
+  # 縦横比を維持したまま、width, heightを800pxにリサイズ
+  process resize_to_fit: [800, 800]
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -47,3 +50,5 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
 end
+
+  # $ rails g uploader imageでcreate  app/uploaders/image_uploader.rbが生成

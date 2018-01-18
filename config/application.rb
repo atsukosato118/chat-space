@@ -12,7 +12,6 @@ module ChatSpace
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
       config.i18n.default_locale = :ja
-  # jaファイルを読み込むための記述
   end
 end
 
@@ -26,3 +25,7 @@ module PairsLike
     end
   end
 end
+
+    # flashメッセージを日本語化のための記述
+    # config.i18n.default_locale = :ja
+    # 日本語ファイルをダウンロード(devise.ja.yml、ja.yml)して、config/locales以下に配置

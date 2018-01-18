@@ -72,6 +72,8 @@ gem 'erb2haml'
 end
 # アイコンを表示
 gem "font-awesome-rails"
+# デバイスを全ての環境にインストール
 gem 'devise'
+# Carrierwaveを導入
 gem "carrierwave"
 gem "mini_magick"

@@ -32,9 +32,23 @@
         #chat-group-user.chat-group-user.clearfix.js-chat-member
           %input{name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}"}
             %p.chat-group-user__name
-            =current_user.name
+              =current_user.name
         #chat-group-users
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
         = f.submit data: {disable_with: "Saving..."}, name: "commit", type: "submit", value: "Save" , class:"chat-group-form__action-btn"
+
+    -# エラーメッセージはエラーが発生すると、error.full_message内に格納
+    -# @group = Group.new(group_params)
+    -# Groupモデルにエラーがあった場合
+    -# -if @group（モデル名）.errors.any?
+          %ul
+            - @group.errors.full_messages.each do |message|
+              %li
+                = message
+        でエラーを表示する
+
+      日本語化はgem 'rails-i18n'で行う
+      config/application.rb内にconfig.i18n.default_locale = :jaを追記
+      一部日本語化していないのでconfig/localesにja.ymlを追加して手動で追加

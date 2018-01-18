@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+
+  # before_actionで全てのアクションで@groupsを使えるように
   before_action :message_group, only: [:index, :create]
    # インデックスアクションの追加
    # コントローラークラスのインスタンスメソッドはアクションと呼ばれる
@@ -73,3 +75,5 @@ end
 
 # 自動更新
 # @messages.where
+
+# includes(:user)でN+１問題を解決
