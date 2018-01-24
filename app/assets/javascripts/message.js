@@ -42,7 +42,6 @@ $(document).on('turbolinks:load', function(){
     })
     .done(function(data){
       // console.log('ajax化成功')でajax化できているか確認
-      // console.log(data)でデータ確認
       var html = buildHTML(data);
       $('.chat__box').append(html);
       $('#message_field').val('');

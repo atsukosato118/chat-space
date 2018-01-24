@@ -1,5 +1,3 @@
--# Dlした素材はview/grpups/edit.html.hamlへ
--# rake haml:replace_erbsでhtmlからhamlに変換
 .chat-group-form
   %h1 チャットグループ編集
   = form_for @group do |f|
@@ -22,7 +20,8 @@
         = f.label :chat_group_チャットメンバーを追加, "チャットメンバーを追加", class: "chat-group-form__label"
       .chat-group-form__field--right
         .chat-group-form__search.clearfix
-          = f.text_field :members, value: "", type: "text", placeholder: "追加したいユーザー名を入力してください", class: "chat-group-form__input", id: "user-search-field"
+          = f.text_field :members, value: "", type: "text", placeholder: "追加したいユーザー名を入力してください",
+           class: "chat-group-form__input", id: "user-search-field"
           #user-search-result
 
     .chat-group-form__field.clearfix
@@ -40,5 +39,5 @@
       .chat-group-form__field--right
         = f.submit data: {disable_with: "Saving..."}, name: "commit", type: "submit", value: "Save" , class:"chat-group-form__action-btn"
 
-   -# %input{name: "group[user_ids][]",
+  -# %input{name: "group[user_ids][]",
   -# groupのuser_idsはinputで入力した値

@@ -39,27 +39,24 @@ $(document).on('turbolinks:load', function(){
     })
     .done(function(data) {
       // console.log(data);で値取れてるか確認
-
-      // var last_message_id = $('.chat__main__first-content').last().data('message-id');
-      data.forEach (function(message) {
+        console.log(data);
         // console.log(message);で取れてるか確認
-          var html = buildHTML(message)
+          var html = buildHTML(data)
             $(".chat__box").append(html);
             $('.chat__box').animate({scrollTop: $('.chat__box')[0].scrollHeight}, 'fast');
-      });
     });
   }, 5000 );
 })
-
-
-//   // 自動更新
-//   setInterval(function(){
-//     $.ajax({
-//       url :url,
-//       type: "GET",
-//       dataType: 'json',
-//       processData: false,
-//       contentType: false,
+//
+// //
+// //   // 自動更新
+// //   setInterval(function(){
+// //     $.ajax({
+// //       url :url,
+// //       type: "GET",
+// //       dataType: 'json',
+// //       processData: false,
+// //       contentType: false,
 //     })
 //     .done(function(data){
 //       $.each(data, function(i, message) {

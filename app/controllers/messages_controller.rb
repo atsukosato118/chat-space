@@ -6,9 +6,10 @@ class MessagesController < ApplicationController
    # コントローラークラスのインスタンスメソッドはアクションと呼ばれる
    def index
      @message = Message.new
+     @new_messages = @currentgroup.messages.where("id > ?", params[:id])
      respond_to do |format|
       format.html
-      format.json{ @new_messages = @currentgroup.messages.where("id > ?", params[:id]) }
+      format.json
     end
    end
 
