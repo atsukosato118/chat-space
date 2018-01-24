@@ -25,25 +25,26 @@ $(document).on('turbolinks:load', function(){
                 </div>`;
                   return html;
                 }
-  setInterval(function(){
+          setInterval(function(){
     // var last_message_id = $('.chat__main__first-content').last().data('message-id');
-    var last_message_id = $('.chat__main__first-content').data('message-id');
+    var last_message_id = $('.chat__main__first-content').last().data('message-id');
     // console.log(last_message_id);
     $.ajax({
       url : location.href,
       type: "GET",
       dataType: 'json',
-      data: {
-        id: last_message_id
-      },
+      // data: {
+      //   id: last_message_id
+      // },
     })
     .done(function(data) {
       console.log(data);
       // console.log(data);で値取れてるか確認
-        // console.log(data);
         // console.log(message);で取れてるか確認
-        var html = buildHTML(data);
-        $('.chat__box').append(html);
+        if (last_message_id < data.id) {
+          var html = buildHTML(data);
+          $('.chat__box').append(html);
+        };
         $('#message_field').val('');
         $('#message_image').val('');
         $('.chat__main').animate({scrollTop: $('.chat__box')[0].scrollHeight}, 'fast');

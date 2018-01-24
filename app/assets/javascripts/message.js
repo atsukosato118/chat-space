@@ -39,7 +39,7 @@ $(document).on('turbolinks:load', function(){
       contentType: false
     })
     .done(function(data){
-      // console.log(data);
+      console.log(data);
       // console.log('ajax化成功')でajax化できているか確認
       var html = buildHTML(data);
       $('.chat__box').append(html);
