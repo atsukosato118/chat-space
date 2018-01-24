@@ -5,6 +5,11 @@ json.array! @new_messages do |new_message|
   json.id new_message.id
   json.time new_message.create_time(new_message.created_at)
 end
+# json.user @new_messages.id
+# json.user @new_messages.user.name
+# json.body  @new_messages.body
+# json.image @new_messages.image
+# json.time @new_messages.create_time(@new_messages.created_at)
 
 # @messagesはmessage_controllerの以下に定義
 # def message_group

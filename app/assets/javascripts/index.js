@@ -3,6 +3,10 @@ $(document).on('turbolinks:load', function(){
   function buildHTML(message) {
     //console.log("html");でbuildHTMLが呼べているか確認
     // console.log(message.image.url);でimageのurlがあるか確認
+    var messageImage = '';
+    // if (message.image.url) {
+    //     messageImage = `<img src ="${message.image.url}">`;
+    // }
     var html = `<div class ="chat__main__first-content" data-message-id=${message.id}>
                   <div class ="chat__main__first-content__list">
                     <div class ="chat__main__first-content__list__name">
@@ -14,21 +18,17 @@ $(document).on('turbolinks:load', function(){
                   </div>
                   <div class = "chat__main__first-content__message">
                       ${message.body}
-                  </div>`
-
-                  // 表示されないのは変数のせい？と思ったら文字列にして確認
-              html +=
-                  (message.image.url) ?
-                    (
-                      `<div class= chatspace-content__chat> <img src= "${message.image.url}"></div></div>`
-                    ):
-                    (
-                      `</div>`
-                    );
+                  </div>
+                  <div class = "chat__main__first-content__image">
+                      ${messageImage}
+                  </div>
+                </div>`;
                   return html;
-  }
+                }
   setInterval(function(){
-    var last_message_id = $('.chat__main__first-content').last().data('message-id');
+    // var last_message_id = $('.chat__main__first-content').last().data('message-id');
+    var last_message_id = $('.chat__main__first-content').data('message-id');
+    // console.log(last_message_id);
     $.ajax({
       url : location.href,
       type: "GET",
@@ -38,12 +38,15 @@ $(document).on('turbolinks:load', function(){
       },
     })
     .done(function(data) {
+      console.log(data);
       // console.log(data);で値取れてるか確認
-        console.log(data);
+        // console.log(data);
         // console.log(message);で取れてるか確認
-          var html = buildHTML(data)
-            $(".chat__box").append(html);
-            $('.chat__box').animate({scrollTop: $('.chat__box')[0].scrollHeight}, 'fast');
+        var html = buildHTML(data);
+        $('.chat__box').append(html);
+        $('#message_field').val('');
+        $('#message_image').val('');
+        $('.chat__main').animate({scrollTop: $('.chat__box')[0].scrollHeight}, 'fast');
     });
   }, 5000 );
 })
